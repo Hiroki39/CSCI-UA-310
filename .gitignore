@@ -1,5 +1,5 @@
 *
-ps1.ans-cache.yaml
+*.ans-cache.yaml
 *.*.fls
 *.*.aux
 *.*.*.gz
