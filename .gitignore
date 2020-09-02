@@ -4,6 +4,9 @@
 /*.txt
 *.pdf
 *.*.yaml
+*.*.fls
+*.*.aux
+*.*.*.gz
 
 ##### Windows
 # Windows thumbnail cache files
