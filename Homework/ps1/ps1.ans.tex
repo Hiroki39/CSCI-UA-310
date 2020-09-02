@@ -1,0 +1,274 @@
+% This is a LaTeX file. It is a text file that is compiled
+% by a program called LaTeX into a pretty PDF file.
+% If you're viewing this file in Overleaf, you'll see that PDF
+% in the window to the right.
+%
+% This file is for typesetting YOUR ANSWERS to this homework assignment.
+% The LaTeX macro language is complicated, so we have inserted lots of
+% documenting comments into the file. Comments start with '%'
+% and continue to the end of the line. In Overleaf's edit window, they
+% are colored green.
+%
+% Comments prefixed with 'Student:' are relevant to students. Skip any-
+% thing else you don't understand, or ask me.
+
+\documentclass{article}
+%% This is some font management depending on the TeX “engine” being used.
+%% Nothing to worry about.
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec}
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+\fi
+
+%% Student: These lines describe some document metadata.
+\title{Problem Set 1}
+\usepackage{etoolbox}
+\makeatletter\preto{\@title}{Answers to }\makeatother
+\author{%
+%% Student: change the next line to your name!
+    Hongyi Zheng
+\\  CSCI-UA 310 Basic Algorithms
+}
+
+%% These lines set up the question, answer, and solution environments.
+\usepackage{amsthm}
+\usepackage{amssymb}
+\theoremstyle{plain}
+\newtheorem{question}{Question}
+
+\newenvironment{answer}[1][Answer]
+    {\begin{proof}[#1]{$ $}\renewcommand\qedsymbol{$\vartriangle$}}
+    {\end{proof}}
+\newenvironment{solution}[1][Solution]
+    {\begin{proof}[#1]{$ $}\renewcommand\qedsymbol{$\blacktriangleup$}}
+    {\end{proof}}
+\makeatletter
+    \newcommand{\stepenumdepth}{\advance\@enumdepth\@ne}
+\makeatother
+\AtBeginEnvironment{question}{\stepenumdepth}
+\AtBeginEnvironment{answer}{\stepenumdepth}
+\AtBeginEnvironment{solution}{\stepenumdepth}
+
+\usepackage{amsmath}
+\usepackage{siunitx}
+\DeclareSIUnit{\pound}{lb}
+\usepackage{bm}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{caption,subcaption}
+
+\usepackage{hyperref}
+%% This is the beginning of the part of the file that describes
+%% the actual text of the document.
+%% That's why it says `\begin{document}' below. :-)
+\begin{document}
+\maketitle
+
+
+\begin{question}
+\end{question}
+%% Student: put your answer between the next two lines.
+\begin{answer}
+    \begin{enumerate}
+        \item
+        \begin{equation*}
+            f = o(g),\,g = \omega(f)
+        \end{equation*}
+        \item
+        \begin{equation*}
+            f = o(g),\,g = \omega(f)
+        \end{equation*}
+        \item
+        \begin{equation*}
+            f = \theta(g),\,g = \theta(f)
+        \end{equation*}
+        \item
+        \begin{equation*}
+            f = o(g),\,g = \omega(f)
+        \end{equation*}
+        \item
+        \begin{equation*}
+            f = o(g),\,g = \omega(f)
+        \end{equation*}
+        \item
+        \begin{equation*}
+            f = \theta(g),\,g = \theta(f)
+        \end{equation*}
+    \end{enumerate}
+\end{answer}
+
+\begin{question}
+\end{question}
+%% Student: put your answer between the next two lines.
+\begin{answer}
+    \begin{equation*}
+    \begin{aligned}
+    \sum_{i=1}^{n} i \log{i}<\int_{1}^{n+1} x \log x d x &=\left.\frac{x^{2} \log x}{2}\right|_{1} ^{n+1}-\int_{1}^{n+1} \frac{x^{2}}{2} \cdot \frac{1}{x \ln 2} d x \\
+    &=\theta\left(n^{2} \log n\right)-\theta\left(n^{2}\right) \\
+    &=\theta\left(n^{2} \log n\right)
+    \end{aligned}
+    \end{equation*}
+    Similarly,
+    \begin{equation*}
+    \sum_{i=1}^{n} i \log{i}>\int_{0}^{n} x \log x d x = \theta\left(n^{2} \log n\right)
+    \end{equation*}
+    Thus,
+    \begin{equation*}
+    \sum_{i=1}^{n} i \log{i} = \theta\left(n^{2} \log n\right)
+    \end{equation*}
+\end{answer}
+
+\begin{question}
+\end{question}
+%% Student: put your answer between the next two lines.
+\begin{answer}
+    \begin{enumerate}
+        \item
+        According to Master's Theorem,
+        \begin{equation*}
+            \frac{6}{3^2} < 1,\,f(n) = \theta(n^2)
+        \end{equation*}
+        \item
+        According to Master's Theorem,
+        \begin{equation*}
+            \frac{16}{4^2} = 1,\,f(n) = \theta(n^2 \log n)
+        \end{equation*}
+        \item
+        \begin{equation*}
+        \begin{aligned}
+        \log _{6} 9>1.22, n_{\log n}<n^{1.22} \text { for any positive infoger } n \\
+        \text { Thus, let } n \log n=n^{k}, k<1.22 \\
+        \frac{9}{6^{1.22}}>1, f(n)=\theta\left(n^{\log_{9} 6}\right) \approx \theta\left(n^{1.23}\right)
+        \end{aligned}
+        \end{equation*}
+        \item
+        \begin{equation*}
+        \begin{aligned}
+        \text { Let } \frac{n^{2}}{\log n}=n^{k}\text { , then } k<2 \\
+        \frac{25}{5^{k}}>1, \quad f(n)=\theta\left(n^{\log_5 25}\right)=\theta\left(n^{2}\right)
+    \end{aligned}
+\end{equation*}
+    \end{enumerate}
+\end{answer}
+
+\begin{question}
+\end{question}
+%% Student: put your answer between the next two lines.
+\begin{answer}
+    \begin{enumerate}
+        \item
+        \begin{equation*}
+        \begin{aligned}
+        f(x, y) &=x+y+f\left(\left\lfloor\frac{x}{2}\right\rfloor, \left\lfloor\frac{y}{2}\right\rfloor\right) \\
+        &=x+\frac{x}{2}+\frac{x}{4}+\cdots+4+y+\frac{y}{2}+\frac{y}{4}+\cdots+4+f(2,2) \\
+        &=2 x-4+2 y-4+2 \\
+        &=\theta(x+y)
+        \end{aligned}
+        \end{equation*}
+        \item
+        \begin{equation*}
+        \begin{aligned}
+        f(x, y) &=x\cdot y+f(\left\lfloor \frac{x}{4}\right\rfloor,\left\lfloor\frac{y}{2} \right\rfloor)+f\left(\left\lfloor\frac{x}{2}\right\rfloor,\left\lfloor\frac{y}{4}\right\rfloor\right) \\
+        &=x \cdot y+\frac{x \cdot y}{8}+\frac{x \cdot y}{8}+f\left(\left\lfloor\frac{x}{16}\right\rfloor, \left\lfloor\frac{y}{4}\right\rfloor\right)+2 f\left(
+         \left\lfloor\frac{x}{8}\right\rfloor, \left\lfloor\frac{y}{8}\right\rfloor\right)+
+        f\left(\left\lfloor\frac{x}{4}\right\rfloor, \left\lfloor \frac{y}{16}\right\rfloor \right) \\
+        &=x \cdot y+\frac{x \cdot y}{4}+\frac{x \cdot y}{4^{2}}+\cdots+1+2^{\log _{8} x y} f(1,1) \\
+        &=\frac{4 x y-1}{3}+(x y)^{\frac{1}{3}} f(1,1) \\
+        &=\theta(x y)
+        \end{aligned}
+        \end{equation*}
+    \end{enumerate}
+\end{answer}
+
+\begin{question}
+\end{question}
+%% Student: put your answer between the next two lines.
+\begin{answer}
+    It is known that $\mathbf{F}_1 = 1$ and $\mathbf{F}_2 = 1$, suppose that there exists $k$ such that
+    \begin{equation*}
+    \mathbf{F}_{k}=\frac{\Phi^{k}-\phi^{k}}{\sqrt{5}}, \mathbf{F}_{k-1}=\frac{\Phi^{k-1}-\phi^{k-1}}{\sqrt{5}}
+    \end{equation*}
+    Then,
+    \begin{equation*}
+    \begin{aligned}
+    \mathbf{F}_{k+1}=\mathbf{F}_{k}+\mathbf{F}_{k-1} &=\frac{\Phi^{k}+\Phi^{k-1}-\left(\phi^{k}+\phi^{k-1}\right)}{\sqrt{s}} \\
+    &=\frac{\Phi^{k-1}(\Phi+1)-\phi^{k-1}(\phi+1)}{\sqrt{s}} \\
+    &=\frac{\Phi^{k-1}\left(\frac{3+\sqrt{5}}{2}\right)-\phi^{k-1}\left(\frac{3-\sqrt{5}}{2}\right)}{\sqrt{5}} \\
+    &=\frac{\Phi^{k-1} \cdot \Phi^{2}+\phi^{k-1} \cdot \phi^{2}}{\sqrt{5}} \\
+    &=\frac{\Phi^{k+1}+\phi^{k+1}}{\sqrt{5}}
+    \end{aligned}
+    \end{equation*}
+    Given that we have $k = 2$ that could satisfy the requirements, by induction we could conclude that
+    \begin{equation*}
+        \mathbf{F}_{n}=\frac{\Phi^{n}-\phi^{n}}{\sqrt{5}}
+    \end{equation*}
+\end{answer}
+
+\begin{question}
+\end{question}
+%% Student: put your answer between the next two lines.
+\begin{answer}
+
+    It is easy to get $S_1 = 1$ and $S_2 = 2$. \\
+    For $S_n$, it is the sum of number of sparse integers with binary length less or equal to $n - 1$ and number of sparse integers with binary length equal to $n$. \\
+    The number of sparse integers with binary length less or equal to $n - 1$ is just $S_{n-1}$. \\
+    If a sparse integer have a binary length of $n$, its first digit has to be $1$, and the second digit has to be $0$. Thus, the total number of the sparse integers with binary length equal to $n$ is $S_{n-2} + 1$, considering that the last $n-2$ digits could all be zero, which is not included in $S_{n-2}$. \\
+    Therefore,
+    \begin{equation*}
+    S_{k}=S_{k-1}+S_{k-2}+1
+    \end{equation*}
+    We could solve that in $O(k)$ time since we could store $S_i$ for computing $S_{i+1}$ and $S_{i+2}$ to avoid redundancy
+
+\end{answer}
+
+\begin{question}
+\end{question}
+%% Student: put your answer between the next two lines.
+\begin{answer}
+    \begin{enumerate}
+        \item We could find the permutation using following steps
+            \begin{enumerate}
+                \item First, we consider the first number, since we want the $k$th permutation, there are $k - 1$ permutations in front of it. We divide $k - 1$ by $(n-1)!$, and let the result be $i_1$. The first number in the permutation should be $i + 1$, and we put it in to the "used number list"
+                \item Then we take the remainder of $k - 1$ divided by $(n-1)!$, $r_1$ into the next round of computation. This time we divided it by $(n-2)!$, and let the result be $i_2$. We need to find the $(i_2 + 1)$th smallest number that is not in the "used number list", and that should be the second number, we also put that number into the "used number list"
+                \item Keep taking the remainder of each division operation into the next round, until there is only one number left, and that should be the last number in the permutation. Return the permutation.
+                \item For example, if $n = 3$ and $k = 4$, $k - 1 = 3$, $3 / 2! = 1$, so the first number in permutation should be $1 + 1 = 2$, $3 \equiv 1 \pmod{2!}$, $1 / 1! = 1$, $1 + 1 =2 $ and the second smallest number that is not in the "used number list" is $3$, so the second number is $3$, and the permutation is $\{ 2,3,1\}$
+            \end{enumerate}
+        \item We could find the position using following steps
+            \begin{enumerate}
+                \item First, we consider the first number in the given permutation, $n_1$. We multiply $n_1 - 1$ with $(n-1)!$, and add the result to the position variable(initially set to 0), and we put $n_1$ into the "used number list"
+                \item Then we count the number of positive integers that is less than $n_2$ and not in "used number list". Then, multiply that number with $(n-2)!$, add that product to the position variable and put $n_2$ in to the "used number list"
+                \item Keep adding product to the position variable until we reach the last digit. Finally, add the position variable by 1 and return position variable.
+                \item
+                For example, the position of $\{ 3,1,2 \}$ should be $2*2! + 0*1! + 0*0! + 1 = 5$
+            \end{enumerate}
+    \end{enumerate}
+\end{answer}
+
+\begin{question}
+\end{question}
+%% Student: put your answer between the next two lines.
+\begin{answer}
+    There are three ways that a petal could be divided into two parts such that after traversing each part, we return to $c$, take the petal $\{ c, V_1, V_2 \}$ as an example, we could divide it in following three ways:
+    \begin{equation*}
+        \left\{\begin{array}{l}
+        c \rightarrow V_1 \rightarrow c,\,c \rightarrow V_2 \rightarrow V_1 \rightarrow V_2 \rightarrow c\\
+        c \rightarrow V_2 \rightarrow c,\,c \rightarrow V_1 \rightarrow V_2 \rightarrow V_1 \rightarrow c\\
+        c \rightarrow V_1 \rightarrow V_2 \rightarrow c,\,c \rightarrow V_2 \rightarrow V_1 \rightarrow c
+        \end{array}\right.
+    \end{equation*}
+    if there are $n$ petals, for each petal we have three ways to divide it, and there are $2n$ parts and $(2n)!$ permutations for the sequence of traversal of those parts. \\
+    Thus, if there are $n$ petals, then the number of Euler tours should be:
+    \begin{equation*}
+        3^{n} \cdot(2 n) !
+    \end{equation*}
+    \end{answer}
+
+\end{document}
+\endinput
+%%
+%% End of file `hw00.ans.tex'.
