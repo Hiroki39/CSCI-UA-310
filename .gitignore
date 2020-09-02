@@ -1,5 +1,8 @@
 *
-ps*
+*.yaml
+*.fls
+*.aux
+*.gz
 !*.*
 !*/
 /*.txt
