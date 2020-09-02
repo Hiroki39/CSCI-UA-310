@@ -1,12 +1,9 @@
 *
-*.ans-cache.yaml
-*.*.fls
-*.*.aux
-*.*.*.gz
 !*.*
 !*/
 /*.txt
 *.pdf
+*.*.yaml
 
 ##### Windows
 # Windows thumbnail cache files
